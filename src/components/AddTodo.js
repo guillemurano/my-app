@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
 
 class AddTodo extends Component {    
@@ -28,15 +28,20 @@ class AddTodo extends Component {
     render() {
         const {inputValue} = this.state;
         return(
-            <div>
+            <Fragment >
                 <input 
                     onChange={this.handleChange}
                     value={inputValue} 
-                    type='text'/>
-                <button
+                    type='text' style={{
+                        marginLeft: '40px'
+                     }}/>
+                <button style={{
+                    marginLeft: '10px',
+                    width: '50px'
+                    }}
                     onClick={this.handleClick}
                 >Add</button>
-            </div>
+            </Fragment>
         )
     }
 }

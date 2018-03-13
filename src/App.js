@@ -62,8 +62,12 @@ class App extends Component {
     const { todos, filter } = this.state;
     return (
       <div>
-        <form onSubmit={this.handleDeleteTodo}>
-        <AddTodo onAddTodo={this.handleAddTodo} />
+        <form style={{
+           margin: '30px'
+        }} onSubmit={this.handleDeleteTodo}>
+        <Fragment>
+          <AddTodo onAddTodo={this.handleAddTodo} />
+        </Fragment>
         {
           todos.length ?
             <Fragment>
@@ -74,8 +78,10 @@ class App extends Component {
                 onDeleteTodo={this.handleDeleteTodo}
                 onToggle={this.handleToggle}/>
             </Fragment>
-              :
-            <h3>Add Todos</h3>
+            :
+            <Fragment>
+              <h3 style={{ marginLeft: '40px' }}>Add Todos</h3>
+            </Fragment>
         }
         </form>
       </div>

@@ -26,11 +26,16 @@ class Todo extends Component {
 
   render() {
     const {text, onDeleteTodo, onEditTodo, id, complete} = this.props;
-    return (<li>
-      <input type='checkbox' onChange={this.handleToggle} checked={ complete ? 'checked' : ''}/>
-      <label>{text}</label>
-      <button onClick={this.handleEdit}>Edit</button>
-      <button onClick={this.handleDelete}>Delete</button>
+    return (<li style={{
+        flexDirection: 'row',
+        width: '450px'
+      }}>
+      <input style={{ margin: '5px'  }} type='checkbox' onChange={this.handleToggle} checked={ complete ? 'checked' : ''}/>
+      <label style={{ margin: '5px', fontFamily: 'verdana', fontWeight: '600' }} >{text}</label>
+      <div style={{marginLeft: '5px', float:'right'}}>
+        <button style={{ marginRight: '5px', width: '60px', cursor: 'pointer'}}  onClick={this.handleEdit}>Edit</button>
+        <button style={{ width: '60px', cursor: 'pointer'}}  onClick={this.handleDelete}>Delete</button>
+      </div>
     </li>)
   }
 }
@@ -51,7 +56,11 @@ export const TodoList = ({list, onDeleteTodo, onEditTodo, onToggle, filter}) => 
   })
 
   return(
-    <ul>
+    <ul style={{
+      listStyleType: 'none',
+      display: 'flex',
+      flexDirection: 'column'
+  }}>
       {
         todosToRender.map(todosToRender => 
           <Todo key={todosToRender.id} {...todosToRender} 
