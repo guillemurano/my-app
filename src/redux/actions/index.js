@@ -1,4 +1,3 @@
-
 export function addTodo(newTodo){
     return {
       type: 'ADD_TODO',
@@ -20,7 +19,7 @@ export function changeTodoStatus(todoId){
     }
 }
 
-export function changeFilter (filter) {
+export function changeFilter(filter) {
     return {
         type: 'CHANGE_FILTER',
         filter

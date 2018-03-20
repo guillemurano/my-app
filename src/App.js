@@ -5,7 +5,7 @@ import { TodoList } from './components/TodoList' //function export
 import AddTodo from './components/AddTodo' //default export
 import Filters from './components/Filters'
 import { connect } from 'react-redux'
-import * as actions from './redux/actions'
+import * as actions from './redux/actions';
 
 class App extends Component {
   state = {
